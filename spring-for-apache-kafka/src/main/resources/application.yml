@@ -1,0 +1,15 @@
+################
+# CONFIG KAFKA #
+################
+kafka:
+  bootstrap-servers: localhost:29092
+  topic:
+    base:
+      partitions: 2
+      replicas: 1
+      retention:
+        ms: 43200000 # 12 * 3600000
+      cleanup:
+        policy: delete,compact
+    bookTopic:
+      name: book-event-topic
